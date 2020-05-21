@@ -1,0 +1,8 @@
+.el-menu {
+  border-right: 0 !important;
+}
+
+.el-menu-item.is-active {
+  color: rgba(255, 255, 255) !important;
+  background-color: #bb0a30 !important;
+}
