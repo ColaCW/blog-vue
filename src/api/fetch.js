@@ -1,7 +1,7 @@
 import axios from 'axios';
 import router from '@/router/router.js';
 import { removeToken, removeUser } from '@/api/auth.js';
-import { Notification } from 'element-ui';
+import { Notification, Loading } from 'element-ui';
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -45,6 +45,15 @@ const errorHandler = error => {
 
 // 请求拦截
 instance.interceptors.request.use(config => {
+  if (config.loading) {
+    this.load = Loading.service({
+      lock: true,
+      text: 'Loading',
+      spinner: 'el-icon-loading',
+      background: 'rgba(0, 0, 0, 0.7)'
+    });
+  }
+
   // 请求头信息，token 验证
   config.headers = {
     // jwt: getToken(),
@@ -55,6 +64,10 @@ instance.interceptors.request.use(config => {
 
 // 响应拦截
 instance.interceptors.response.use(({ data }) => {
+  if (this.load) {
+    this.load.close();
+  }
+
   if (data.status === 200) {
     return data;
   }
