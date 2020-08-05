@@ -1,18 +1,22 @@
 <template>
   <div id="app" v-cloak>
-    <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="4"><div style="height:1px"></div></el-col>
-    <el-col :xs="8" :sm="12" :md="16" :lg="18" :xl="16">
-      <ul class="shareBox">
-        <div style="text-align: left;">
-          <b>您现在的位置是:</b>&nbsp;&nbsp;网站首页&nbsp;>&nbsp;资源分享
-          <hr style="height: 2px;border: 0;margin: 0;margin-top:10px;background-color:#ddd;" />
+    <el-row>
+      <el-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4"><div style="height:1px"></div></el-col>
+      <el-col :xs="24" :sm="16" :md="16" :lg="16" :xl="16">
+        <div class="shareBox">
+          <div style="text-align: left;">
+            <b>您现在的位置是:</b>&nbsp;&nbsp;资源分享
+            <hr style="height: 2px;border: 0;margin: 0;margin-top:10px;background-color:#ddd;" />
+          </div>
+          <ul>
+            <a v-for="share in shareList" :key="share.name" :href="share.href" target="_blank">
+              <li>【视频】{{ share.name }} （提取码：{{ share.MA }}）</li>
+            </a>
+          </ul>
         </div>
-        <a v-for="share in shareList" :key="share.name" :href="share.href" target="_blank">
-          <li>【视频】{{ share.name }} （提取码：{{ share.MA }}）</li>
-        </a>
-      </ul>
-    </el-col>
-    <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="4"><div style="height:1px"></div></el-col>
+      </el-col>
+      <el-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4"><div style="height:1px"></div></el-col>
+    </el-row>
   </div>
 </template>
 <script>

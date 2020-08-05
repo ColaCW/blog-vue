@@ -17,4 +17,4 @@ export const getBlogCategorys = params => axios.get(`${SERVER.SERVICE_HOST}/api/
 export const good = id => axios.get(`${SERVER.SERVICE_HOST}/api/blog/good/${id}`, {});
 
 // 分页获取博客
-export const getBlogs = params => axios.get(`${SERVER.SERVICE_HOST}/api/blog/getBlogs`, { params });
+export const getBlogs = params => axios.get(`http://127.0.0.1:8088/front/blogfront/getBlogs`, { params, loading: true });

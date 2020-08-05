@@ -1,11 +1,11 @@
 <template>
   <div id="app" v-cloak>
-    <el-row>
-      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="4"><div style="height:1px"></div></el-col>
-      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="12">
+    <el-row :gutter="20">
+      <el-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4"><div style="height:1px"></div></el-col>
+      <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="content">
           <div style="text-align: left;">
-            <b>您现在的位置是:</b>&nbsp;&nbsp;网站首页&nbsp;>&nbsp;关于我
+            <b>您现在的位置是:</b>&nbsp;&nbsp;关于我
             <hr style="height: 2px;border: 0;margin: 0;margin-top:10px;background-color:#ddd;" />
           </div>
           <div style="text-align: left;margin-top: 20px;">
@@ -25,12 +25,12 @@
           </div>
         </div>
       </el-col>
-      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="4" style="padding-left: 35px;">
+      <el-col :xs="24" :sm="4" :md="4" :lg="4" :xl="4">
         <div class="qrcode">
           <img src="../../static/img/微信.jpg" />
         </div>
       </el-col>
-      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="4"><div style="height:1px"></div></el-col>
+      <el-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4"><div style="height:1px"></div></el-col>
     </el-row>
   </div>
 </template>
